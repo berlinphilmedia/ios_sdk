@@ -6,17 +6,11 @@ let package = Package(
     name: "AdjustSdk",
     products: [
         .library(name: "AdjustSdk", targets: ["AdjustSdk"]),
-        .library(name: "AdjustWebBridge", targets: ["AdjustWebBridge", "AdjustSdk"]),
-        .library(name: "AdjustGoogleOdm", targets: ["AdjustGoogleOdm", "AdjustSdk"])
     ],
     dependencies: [
         .package(
             url: "https://github.com/adjust/adjust_signature_sdk.git",
             .exact("3.61.0")
-        ),
-        .package(
-            url: "https://github.com/googleads/google-ads-on-device-conversion-ios-sdk.git",
-            "2.0.0"..<"4.0.0"
         )
     ],
     targets: [
@@ -33,26 +27,6 @@ let package = Package(
                 .headerSearchPath(""),
                 .headerSearchPath("Internal")
             ]
-        ),
-        .target(
-            name: "AdjustWebBridge",
-            dependencies: [
-                .product(name: "AdjustSignature", package: "adjust_signature_sdk")
-            ],
-            path: "AdjustBridge",
-            cSettings: [
-                .headerSearchPath(""),
-                .headerSearchPath("../Adjust/include"),
-            ]
-        ),
-        .target(
-            name: "AdjustGoogleOdm",
-            dependencies: [
-                .product(name: "GoogleAdsOnDeviceConversion", package: "google-ads-on-device-conversion-ios-sdk")
-            ],
-            path: "plugins/odm",
-            sources: [ "headers", "sources/spm"],
-            publicHeadersPath: "headers"
         )
     ]
 )
