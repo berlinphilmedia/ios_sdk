@@ -1,3 +1,15 @@
+### Version 5.6.1 (2nd April 2026)
+#### Fixed
+- Added handling for certain edge cases in which ODM info was not being sent.
+
+---
+
+### Version 5.6.0 (30th March 2026)
+#### Added
+- Added ability to get informed about remote triggers from backend.
+
+---
+
 ### Version 5.5.4 (23rd March 2026)
 #### Added
 - Added dedicated ODM plugin framework targets.
@@ -9,10 +21,10 @@
 
 ### Version 5.5.3 (6th March 2026)
 #### Fixed
-- Web view bridge security hardening
+- Hardened web view bridge security.
 
 #### Changed
-- Drop support for embedded iframe for security reasons
+- Dropped support for embedded iframe for security reasons.
 
 ---
 
