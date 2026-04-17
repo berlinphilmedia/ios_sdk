@@ -14,7 +14,7 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/adjust/adjust_signature_sdk.git",
-            .exact("3.62.0")
+            .exact("3.67.0")
         )
     ],
     targets: [
